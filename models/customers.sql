@@ -1,3 +1,10 @@
+{{
+    config(
+        materialized='table',
+        tags="hourly"
+    )
+}}
+
 with customers as (
 
     select
