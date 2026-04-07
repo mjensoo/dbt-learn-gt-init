@@ -1,0 +1,22 @@
+version: 2
+
+sources:
+  - name: jaffle_shop
+    schema: jaffle_shop
+    database: raw
+    tables:
+      - name: customers
+      
+      - name: jaffle_shop_orders
+        identifier: orders
+        # 1. Freshness sits at the table level (not inside config)
+        freshness:
+          warn_after:
+            count: 10
+            period: day
+          error_after:
+            count: 10
+            period: day
+        # 2. loaded_at_field MUST be inside config to avoid the deprecation warning
+        config:
+          loaded_at_field: loaded_at_field
