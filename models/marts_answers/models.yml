@@ -1,0 +1,16 @@
+models:
+  - name: dim_customers
+    description: markdown_string -- This table shows all customer, but Copilot could generate a much better description
+    columns:
+      - name: customer_id
+        description: unique ID for each customer
+        data_tests:
+          - unique:
+              config:
+                severity: error
+      - name: first_name
+      - name: last_name
+        data_tests:
+          - not_null
+      - name: number_of_orders
+        description: this column is a coalesce of number_of_orders and 0
