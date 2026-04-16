@@ -36,4 +36,4 @@ models:
   jaffle_shop:
     +materialized: view
 
-    
+    #add comment
