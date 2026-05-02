@@ -4,6 +4,13 @@ sources:
     schema: stripe
     tables:
       - name: payment
+        description: Raw payment data
+        columns:
+          - name: id
+            description: primary key
+            data_tests:
+              - unique
+              - not_null
         config:
           freshness:
             warn_after: {count: 3, period: day}
