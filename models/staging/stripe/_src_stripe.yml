@@ -1,0 +1,11 @@
+sources:
+  - name: stripe
+    database: raw
+    schema: stripe
+    tables:
+      - name: payment
+        config:
+          freshness:
+            warn_after: {count: 3, period: day}
+            error_after: {count: 5, period: day}
+          loaded_at_field: cast(_batched_at as timestamp_tz)
