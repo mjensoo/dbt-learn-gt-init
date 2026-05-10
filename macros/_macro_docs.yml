@@ -1,17 +1,17 @@
 macros:
   - name: cents_to_dollars
-    description: Converts cents to dollars.
+    description: "Converts cents to dollars."
     arguments:
       - name: column_name
-        description: The name of the column containing the amount in cents.
+        description: "The name of the column containing the amount in cents."
         type: string
       - name: decimals
-        description: The number of decimal places to round the result to.
+        description: "The number of decimal places to round the result to."
         type: integer
-        default: 2
-    returns: "Sql expression that converts the amount in cents to dollars"
-    examples:
-      - description: Convert the 'amount_cents' column to dollars with 2 decimal places.
-        code: "{{ cents_to_dollars('amount') }}"
-      - description: Convert the 'price_cents' column to dollars with 3 decimal places.
-        code: "{{ cents_to_dollars('amount', 3) }}"
+        #default: 2
+    #returns: "Sql expression that converts the amount in cents to dollars"
+    #example:
+      #- description: "Convert the 'amount_cents' column to dollars with 2 decimal places."
+      #  code: "{{ cents_to_dollars('amount') }}"
+      #- description: "Convert the 'price_cents' column to dollars with 3 decimal places."
+      #  code: "{{ cents_to_dollars('amount', 3) }}"
