@@ -15,3 +15,19 @@ macros:
       #  code: "{{ cents_to_dollars('amount') }}"
       #- description: "Convert the 'price_cents' column to dollars with 3 decimal places."
       #  code: "{{ cents_to_dollars('amount', 3) }}"
+  - name: grant_select
+    description: "Generates a SQL GRANT statement to give SELECT permissions on a set of tables, views to a specified role for a specified database."
+    arguments:
+      - name: schema
+        description: "The name of the schema to grant SELECT permissions on."
+        type: string
+      - name: role
+        description: "The name of the role to grant SELECT permissions to."
+        type: string
+      - name: database
+        description: "The name of the database containing the schema."
+        type: string
+    #returns: "SQL statement that grants SELECT permissions on the specified schema to the specified role."
+    #examples:
+    #  - description: "Grant SELECT permissions on schema to 'my_role'."
+    #    code: "{{ grant_select('my_schema', 'my_role', 'my_database') }}"
